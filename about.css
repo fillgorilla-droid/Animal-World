@@ -1,0 +1,79 @@
+body{
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+
+    background: linear-gradient(135deg, #1a1a1a, #2a2a2a, #3a3a3a, #242424);
+    background-size: 300% 300%;
+    animation: bgMove 12s ease infinite;
+}
+
+@keyframes bgMove {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+*{
+    color: #e6e6e6; 
+}
+
+.about-site{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.mini-container{
+    background: linear-gradient(270deg, #2b2b2b, #3a3a3a, #4a4a4a, #353535);
+    background-size: 300% 300%;
+    animation: gradientMove 4s ease infinite; 
+    border: 1px solid #555; 
+    border-radius: 30px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+    padding: 25px 30px;
+    text-align: center;
+    color: #f0f0f0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: clamp(14px, 1.2vw, 16px);
+    line-height: 1.6;
+    transition: transform 0.2s ease, box-shadow 0.2s ease; 
+    width: 100%;
+    max-width: 1000px;
+    animation: about 1s ease forwards;
+}
+
+@keyframes gradientMove {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+@keyframes about{
+    0%{
+        opacity: 0;
+        transform: translateY(50px);
+    }
+
+    100%{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.zag{
+    animation: h 1s ease forwards;
+}
+
+@keyframes h{
+    0%{
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+
+    100%{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

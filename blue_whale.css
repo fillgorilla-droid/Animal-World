@@ -1,0 +1,304 @@
+:root{
+    --dark-radial-bg: radial-gradient(
+        ellipse at center,
+        #1a1f26 4%,
+        #0b0f14 35%,
+        #020408 70%,
+        #000000 100%
+    );
+}
+
+*{
+    box-sizing: border-box;
+}
+
+body{
+    min-height: 100vh;
+    font-family: monospace;
+    overflow-x: hidden;
+    background-image: url("https://sotni.ru/wp-content/uploads/2023/08/dno-okeana-4.webp");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+}
+
+a{
+    text-decoration: none;
+    color: aliceblue;
+}
+
+header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 52;
+    min-height: 100px;
+    background: var(--dark-radial-bg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 20px;
+    animation: sigma-header 1s ease forwards;
+}
+
+main{
+    margin-top: 100px;
+}
+
+.logo{
+    position: absolute;
+    left: 30px;
+    width: 90px;
+}
+
+.menu-list{
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 100px;
+    flex-wrap: wrap;
+    padding: 0;
+    margin: 0;
+}
+
+.menu-list > li > a{
+    display: inline-block;
+    transition: transform 0.25s ease, text-decoration 0.25s ease;
+}
+
+.menu-list > li:hover > a{
+    transform: translateY(-4px);
+    text-decoration: underline;
+}
+
+.dropdown{
+    position: relative;
+    padding-bottom: 6px;
+}
+
+.dropdown-menu{
+    display: none;
+    position: absolute;
+    top: 60%;
+    left: 10%;
+    background: var(--dark-radial-bg);
+    border: 1px solid aliceblue;
+    border-radius: 8px;
+    padding: 10px 0;
+    min-width: 170px;
+    list-style: none;
+}
+
+.dropdown-menu li{
+    padding: 5px 20px;
+    transition: transform 0.25s ease;
+}
+
+.dropdown-menu li:hover{
+    transform: translateY(-4px);
+    text-decoration: underline;
+}
+
+.dropdown-menu li a{
+    display: block;
+}
+
+.dropdown:hover .dropdown-menu{
+    display: block;
+}
+
+.cards-container{
+    padding: 40px 15px;
+    animation: sigma 1s ease forwards;
+}
+
+.gorilla-card{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 40px;
+    gap: 20px;
+}
+
+.gorilla-card img{
+    max-width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 20px;
+}
+
+.card-content {
+    background: linear-gradient(135deg, #4b79c8, #5aa0e0, #7ecfff, #a0dfff);
+    background-size: 300% 300%;
+    animation: gradientMove 4s ease infinite; 
+    border: 2px solid #5aa0e0; 
+    border-radius: 30px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+    padding: 25px 30px;
+    text-align: center;
+    color: #fff;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: clamp(14px, 1.2vw, 16px);
+    line-height: 1.6;
+    transition: transform 0.2s ease, box-shadow 0.2s ease; 
+    width: 100%;
+    max-width: 1000px;
+}
+
+.card-content:hover {
+    transform: scale(1.05);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.6);
+}
+
+.card-content:active {
+    transition: all 0.4s;
+    width: 50%;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.6);
+}
+
+
+
+@keyframes gradientMove {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+.card-content h2{
+    margin-bottom: 15px;
+    font-size: clamp(20px, 2vw, 24px);
+    color: #0b0f14;
+    letter-spacing: 1px;
+}
+
+.card-content p{
+    margin-bottom: 12px;
+    font-size: clamp(14px, 1.2vw, 16px);
+    color: #0b0f14;
+}
+
+footer{
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    z-index: 1000;
+    padding: 15px 0;
+    animation: sigma-footer 1s ease forwards;
+    opacity: 0;
+}
+
+.footer-nav2{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+
+
+.footer-some{
+    display: inline-block;
+    background: linear-gradient(135deg, #4b79c8, #5aa0e0, #7ecfff, #a0dfff);
+    border: 2px solid aqua; 
+    color: black;
+    border-radius: 10px;
+    padding: 10px 20px;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    margin: 0;
+    font-size: clamp(14px, 1.2vw, 16px);
+}
+
+.footer-some:hover{
+    transform: scale(1.05);
+    background-color: #7fe000;
+}
+
+@keyframes sigma{
+    0%{
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    100%{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes sigma-header{
+    0%{
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    100%{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes sigma-footer{
+    0%{
+        opacity: 0;
+        transform: translateX(40px);
+    }
+    100%{
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@media (max-width: 900px){
+    .menu-list{
+        gap: 40px;
+    }
+
+    .logo{
+        width: 75px;
+        left: 15px;
+    }
+
+    footer{
+        position: static;
+    }
+
+    .card-content{
+        padding: 10px 10px;
+    }
+}
+
+@media (max-width: 768px){
+    .footer-nav{
+        justify-content: center;
+    }
+
+    .footer-some{
+        width: 90%;
+        text-align: center;
+    }
+}
+
+@media (max-width: 600px){
+    header{
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .logo{
+        position: relative;
+        left: 0;
+    }
+
+    .menu-list{
+        gap: 20px;
+    }
+
+    .card-content{
+        padding: 5px;
+    }
+}
